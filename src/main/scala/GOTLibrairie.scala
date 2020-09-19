@@ -1,11 +1,5 @@
 object GOTLibrairie {
 
-  def calculePanier(nbTomeI: Int, nbTomeII: Int, nbTomeIII: Int, nbTomeIV: Int, nbTomeV: Int): Int = {
-    val nbTotalTome = nbTomeI + nbTomeII + nbTomeIII + nbTomeIV + nbTomeV
-    val prixTotal = nbTotalTome * 8
-    prixTotal
-  }
-
   def calculePrixPanier(nb1: Int): Double = {
     if (nb1 == 0) {
       val prixPanier = 0.0
@@ -28,6 +22,19 @@ object GOTLibrairie {
     }
 
   }
+
+  def calculePanier(nbTomeI: Int, nbTomeII: Int, nbTomeIII: Int, nbTomeIV: Int, nbTomeV: Int): Unit = {
+    if (nbTomeI <= 1 && nbTomeII <=1 && nbTomeIII <=1 && nbTomeIV <=1 && nbTomeV <=1) {
+      val nbTotalTome = nbTomeI + nbTomeII + nbTomeIII + nbTomeIV + nbTomeV
+      println(nbTotalTome)
+    } else {
+      println("error")
+    }
+
+  }
+  
+
+
 
 
 }
