@@ -16,17 +16,12 @@ object GOTLibrairie {
     }
   }
 
-  def calculePrixPanier(nbTomeI: Int, nbTomeII: Int, nbTomeIII: Int, nbTomeIV: Int, nbTomeV: Int): Double = {
-    if (nbTomeI <= 1 && nbTomeII <=1 && nbTomeIII <=1 && nbTomeIV <=1 && nbTomeV <=1) {
-      val nbTotalTome = nbTomeI + nbTomeII + nbTomeIII + nbTomeIV + nbTomeV
+  def calculePrixPanier(tomes: List[Int]): Double = {
+    if (tomes(0) <= 1 && tomes(1) <= 1 && tomes(2) <= 1 && tomes(3) <= 1 && tomes(4) <= 1)  {
+      val nbTotalTome = tomes(0) + tomes (1) + tomes (2) + tomes (3) + tomes (4)
       calculePrixPack(nbTotalTome)
     } else {
-      if (nbTomeI > 1 || nbTomeII > 1) {
-        val nbTomeIBis = nbTomeI - 1
-        val nbTomeIIBis = nbTomeII - 1
-        println(nbTomeIBis, nbTomeIIBis)
-      }
-      nbTomeI
+      -1.0
     }
   }
 
