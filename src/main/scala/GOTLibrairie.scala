@@ -21,8 +21,18 @@ object GOTLibrairie {
       val nbTotalTome = nbTomeI + nbTomeII + nbTomeIII + nbTomeIV + nbTomeV
       calculePrixPack(nbTotalTome)
     } else {
-      -1.0
+      if (nbTomeI > 1 || nbTomeII > 1) {
+        val nbTomeIBis = nbTomeI - 1
+        val nbTomeIIBis = nbTomeII - 1
+        println(nbTomeIBis, nbTomeIIBis)
+      }
+      nbTomeI
     }
   }
+
+
+
+
+
 
 }
