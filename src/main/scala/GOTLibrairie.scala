@@ -1,3 +1,4 @@
+
 object GOTLibrairie {
 
   def calculePrixPack(nbTomeDifferent: Int): Double = {
@@ -26,14 +27,17 @@ object GOTLibrairie {
           else i
         }
       }
-      val pack = tomes.sum - tomeRestants.sum
-      val pack2 = tomeRestants.sum
-      val total = calculePrixPack(pack) + calculePrixPack(pack2)
-      total
+      if (tomeRestants.max >=2){
+        calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPanier(tomeRestants)
+      }else {
+        calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPack(tomeRestants.sum)
+      }
     }else {
       calculePrixPack(tomes.sum)
     }
   }
+
+
 }
 
 
@@ -42,15 +46,7 @@ object GOTLibrairie {
 
 
 
-      /*tomes.dropWhile((n :Int) => {n==0})
 
-      for (i <- tomes) yield i-1
-      println(tomes)
-
-      (tomes(0) != 0 && tomes(1) != 0 && tomes(2) != 0 && tomes(3) != 0 && tomes(4) != 0)
-
-
-      -1.0*/
 
 
 

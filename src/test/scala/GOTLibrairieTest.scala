@@ -27,6 +27,12 @@ class GOTLibrairieTest extends FunSuite{
   test("Panier deux packs de deux tomes") {
     GOTLibrairie.calculePrixPanier(List(2,2,0,0,0)) should be (30.4)
   }
+  test("Panier trois packs de un tome") {
+    GOTLibrairie.calculePrixPanier(List(3,0,0,0,0)) should be (24)
+  }
+  test("Panier quatre packs de deux tomes") {
+    GOTLibrairie.calculePrixPanier(List(4,4,0,0,0)) should be (60.8)
+  }
   test("Panier deux packs de quatres tomes") {
     GOTLibrairie.calculePrixPanier(List(2,2,2,1,1)) should be (51.2)
   }
