@@ -23,20 +23,19 @@ object GOTLibrairie {
         for {
           i <- tomes
         } yield {
-          if (i != 0) i - 1
-          else i
+          if (i != 0) {
+            i - 1
+          }
+          else {
+            i
+          }
         }
       }
-      if (tomeRestants.max >=2){
-        calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPanier(tomeRestants)
-      }else {
-        calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPack(tomeRestants.sum)
-      }
+      calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPanier(tomeRestants)
     }else {
       calculePrixPack(tomes.sum)
     }
   }
-
 
 }
 
