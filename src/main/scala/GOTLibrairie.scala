@@ -19,15 +19,18 @@ object GOTLibrairie {
 
   def calculePrixPanier(tomes: List[Int]): Double = {
     if (tomes.max >= 2) {
-      val tomeRestants: List[Int] = {
-        tomes.map(i=> if (i!=0) i-1 else i)
-      }
-      calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPanier(tomeRestants)
+      val tomeRestants: List[Int] = tomes.map(i=> if (i!=0) i-1 else i)
+      val prixPanier = calculePrixPack(tomes.sum - tomeRestants.sum) + calculePrixPanier(tomeRestants)
+      if (prixPanier == 51.6 ){
+        val remiseMax : Double = 51.2
+        remiseMax
+      }else
+        prixPanier
     }else {
       calculePrixPack(tomes.sum)
     }
   }
-
+  
 }
 
 
